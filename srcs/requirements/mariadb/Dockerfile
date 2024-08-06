@@ -2,7 +2,6 @@ FROM debian:buster
 
 RUN apt update -y &&\
 	apt upgrade -y &&\
-	apt install vim -y &&\
 	apt install mariadb-server -y &&\
 	apt install openssl -y
 
