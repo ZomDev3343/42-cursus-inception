@@ -2,8 +2,8 @@ sleep 10
 
 wp config create --allow-root \
 		--dbname=$SQL_DATABASE \
-		--dbuser=$SQL_USER \
-		--dbpass=$SQL_PASSWORD \
+		--dbuser=$SQL_USER_ADMIN \
+		--dbpass=$SQL_ADMIN_PASSWORD \
 		--dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 wp core install --url=$DOMAIN_NAME \
@@ -14,7 +14,7 @@ wp core install --url=$DOMAIN_NAME \
     			--allow-root --path='/var/www/wordpress'
 
 wp user create 	--allow-root --role=author $WS_USER_LOGIN $WS_USER_MAIL \
-    			--user_pass=$WS_USER_PASS --path='/var/www/wordpress' >> /log.txt
+    			--user_pass=$WS_USER_PASSWORD --path='/var/www/wordpress' >> /log.txt
 
 /usr/sbin/php-fpm7.3 -F
 
