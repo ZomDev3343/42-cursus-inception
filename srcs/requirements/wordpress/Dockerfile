@@ -18,6 +18,6 @@ RUN wget https://fr.wordpress.org/wordpress-6.6-fr_FR.tar.gz -P /var/www &&\
 	mkdir -p /run/php
 
 COPY conf/config.sh /run/php/config.sh
-COPY conf/www.config /etc/php/7.3/fpm/pool.d/www.conf
+COPY conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-ENTRYPOINT [ "/run/php/config.sh" ]
+ENTRYPOINT ["sh", "/run/php/config.sh" ]

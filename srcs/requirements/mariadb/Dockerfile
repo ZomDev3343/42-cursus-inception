@@ -10,4 +10,4 @@ COPY conf/start.sh /etc/mysql/mariadb.conf.d/start.sh
 
 RUN chmod 777 /etc/mysql/mariadb.conf.d/start.sh
 
-CMD [ "/etc/mysql/mariadb.conf.d/start.sh" ]
+CMD [ "sh", "/etc/mysql/mariadb.conf.d/start.sh" ]
