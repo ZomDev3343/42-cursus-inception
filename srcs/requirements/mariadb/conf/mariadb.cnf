@@ -5,6 +5,6 @@ default-character-set=utf8
 # skip-grant-tables
 datadir = /var/lib/mysql
 socket  = /run/mysqld/mysqld.sock
-bind_address=*
+bind-address=*
 port = 3306
 user = mysql

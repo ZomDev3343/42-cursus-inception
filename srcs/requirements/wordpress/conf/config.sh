@@ -1,5 +1,7 @@
 sleep 10
 
+cd /var/www/wordpress
+
 wp config create --allow-root \
 		--dbname=$SQL_DATABASE \
 		--dbuser=$SQL_USER_ADMIN \
@@ -16,5 +18,7 @@ wp core install --url=$DOMAIN_NAME \
 wp user create 	--allow-root --role=author $WS_USER_LOGIN $WS_USER_MAIL \
     			--user_pass=$WS_USER_PASSWORD --path='/var/www/wordpress' >> /log.txt
 
-/usr/sbin/php-fpm7.3 -F
+cd -
+
+php-fpm7.3 -F
 
