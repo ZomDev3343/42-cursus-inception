@@ -60,5 +60,3 @@ volumes:
       type: 'none'
       o: 'bind'
       device: '/home/truello/data/mariadb'
-
-
