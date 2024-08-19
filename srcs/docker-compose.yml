@@ -49,16 +49,16 @@ services:
     restart: unless-stopped
 volumes:
   wordpress:
-    driver: local # ici nous stockons le volume en local
+    driver: local
     driver_opts:
-      type: 'none' 									# aucun type spécifique
+      type: 'none'
       o: 'bind'
-      device: '/home/truello/data/wordpress' 		#Ou stocker le dossier sur votre ordinateur en local
+      device: '/home/truello/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
-      o: 'bind'										 # Les Bind Mounts sont des volumes qui se montent sur un chemin d'accès à l'hôte, et ils peuvent être modifiés par d'autres processus en dehors de docker.
-      device: '/home/truello/data/mariadb'			#Ou stocker le dossier sur votre ordinateur en local
+      o: 'bind'
+      device: '/home/truello/data/mariadb'
 
 
