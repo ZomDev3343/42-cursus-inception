@@ -2,7 +2,7 @@ all : build
 
 build :
 	@sudo hostsed add 127.0.0.1 truello.42.fr && echo "\033[1;32m~|ADD truello.42.fr to /etc/hosts|~\033[0m"
-	@sudo docker compose -f ./srcs/docker-compose.yml up -d --force-recreate 
+	@sudo docker compose -f ./srcs/docker-compose.yml up -d 
 down :
 	@sudo hostsed rm 127.0.0.1 truello.42.fr && echo "\033[1;31m~|DELETE truello.42.fr from /etc/hosts|~\033[0m"
 	@sudo docker compose -f ./srcs/docker-compose.yml down
